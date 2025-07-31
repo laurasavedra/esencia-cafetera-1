@@ -166,7 +166,7 @@ footer.flyer h3 {
   to { transform: translateY(0); opacity: 1; }
 }
 
-.activo { display: none; }
+.oculto { display: none; }
 
 .itinerario {
   max-height: 0;
