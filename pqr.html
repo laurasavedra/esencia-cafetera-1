@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PQR - Esencia Cafetera</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <style>
+    .formulario-pqr {
+      background-color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .formulario-pqr h2 {
+      text-align: center;
+      color: #502d16;
+    }
+    .formulario-pqr input,
+    .formulario-pqr textarea,
+    .formulario-pqr select {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .formulario-pqr button {
+      background-color: #7b3f00;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo-esencia-cafetera.png" alt="Logo" height="60">
+    <h1>📬 Preguntas, Quejas o Reclamos</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="quienes.html">¿Quiénes somos?</a>
+      <a href="mision.html">Misión</a>
+      <a href="vision.html">Visión</a>
+      <a href="paquetes.html">Paquetes</a>
+      <a href="comprar.html">Comprar</a>
+      <a href="pqr.html">PQR</a>
+    </nav>
+  </header>
+
+  <section class="formulario-pqr">
+    <h2>✉️ Escríbenos tu mensaje</h2>
+    <form onsubmit="return enviarPQR()">
+      <input type="text" id="nombrePqr" placeholder="Tu nombre" required />
+      <input type="email" id="correoPqr" placeholder="Tu correo electrónico" required />
+      <select id="tipoPqr" required>
+        <option value="">Seleccionar tipo</option>
+        <option value="Pregunta">Pregunta</option>
+        <option value="Queja">Queja</option>
+        <option value="Reclamo">Reclamo</option>
+      </select>
+      <textarea id="mensajePqr" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar mensaje 📩</button>
+    </form>
+    <div id="respuestaPqr" style="margin-top:1rem;"></div>
+  </section>
+
+  <script>
+    function enviarPQR() {
+      const nombre = document.getElementById('nombrePqr').value.trim();
+      const correo = document.getElementById('correoPqr').value.trim();
+      const tipo = document.getElementById('tipoPqr').value;
+      const mensaje = document.getElementById('mensajePqr').value.trim();
+      const respuesta = document.getElementById('respuestaPqr');
+
+      if (!nombre || !correo || !tipo || !mensaje) {
+        respuesta.innerHTML = '<p style="color: red;">❌ Por favor, completa todos los campos.</p>';
+        return false;
+      }
+
+      respuesta.innerHTML = '<p style="color: green;">✅ ¡Tu mensaje ha sido enviado correctamente! Gracias por escribirnos.</p>';
+      return false;
+    }
+  </script>
+</body>
+</html>

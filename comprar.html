@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de Paquetes - Esencia Cafetera</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🛒 Compra tu experiencia cafetera</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="paquetes.html">Paquetes</a>
+      <a href="comprar.html">Comprar</a>
+      <a href="pqr.html">PQR</a>
+    </nav>
+  </header>
+
+  <section class="paquetes">
+    <div class="paquete">
+      <h2>☕ Paquete 1: Hacienda Ceylán</h2>
+      <p>Incluye alojamiento, alimentación completa, experiencia cafetera y cata.</p>
+      <p><strong>$300.000 COP</strong></p>
+      <button onclick="mostrarFormulario('Hacienda Ceylán')">Comprar ahora 🛍️</button>
+    </div>
+    <div class="paquete">
+      <h2>☕ Paquete 2: Escapadas Cafeteras</h2>
+      <p>Pasadía con recorrido, cata y almuerzo típico.</p>
+      <p><strong>$150.000 COP</strong></p>
+      <button onclick="mostrarFormulario('Escapadas Cafeteras')">Comprar ahora 🛍️</button>
+    </div>
+    <div class="paquete">
+      <h2>☕ Paquete 3: Viotá Tobogán</h2>
+      <p>2 días, alojamiento, alimentación y actividades culturales.</p>
+      <p><strong>$350.000 COP</strong></p>
+      <button onclick="mostrarFormulario('Viotá Tobogán')">Comprar ahora 🛍️</button>
+    </div>
+  </section>
+
+  <section class="formulario-compra oculto" id="formularioCompra">
+    <h3>💳 Finaliza tu compra</h3>
+    <form onsubmit="return validarPago()">
+      <input type="hidden" id="paqueteSeleccionado" name="paquete">
+      <label>Nombre completo:<br>
+        <input type="text" id="nombre" required>
+      </label><br>
+      <label>Número de tarjeta 💳:<br>
+        <input type="text" id="tarjeta" maxlength="16" required>
+      </label><br>
+      <label>Tipo de tarjeta:<br>
+        <select id="tipoTarjeta" required>
+          <option value="">Seleccionar</option>
+          <option value="Crédito">Crédito</option>
+          <option value="Débito">Débito</option>
+        </select>
+      </label><br>
+      <label>Banco:<br>
+        <select id="banco" required>
+          <option value="">Seleccionar</option>
+          <option value="Bancolombia">Bancolombia</option>
+          <option value="Davivienda">Davivienda</option>
+          <option value="Nequi">Nequi</option>
+        </select>
+      </label><br>
+      <label>Fecha de viaje:<br>
+        <input type="date" id="fecha" required class="calendario">
+      </label><br>
+      <button type="submit">Confirmar pago ✅</button>
+    </form>
+    <div id="mensajeCompra"></div>
+  </section>
+</body>
+</html>
