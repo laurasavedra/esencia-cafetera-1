@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Compra de Paquetes - Esencia Cafetera</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -64,12 +64,13 @@
           <option value="Nequi">Nequi</option>
         </select>
       </label><br>
-      <label>Fecha de viaje:<br>
-        <input type="date" id="fecha" required class="calendario">
+      <label>Fecha de ida:<br>
+        <input type="date" id="fechaIda" required>
+      </label><br>
+      <label>Fecha de regreso:<br>
+        <input type="date" id="fechaRegreso" required>
       </label><br>
       <button type="submit">Confirmar pago ✅</button>
     </form>
     <div id="mensajeCompra"></div>
   </section>
-</body>
-</html>
