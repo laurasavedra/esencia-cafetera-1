@@ -36,4 +36,14 @@
       mensaje.innerHTML = '<p style="color: green; font-weight: bold;">✅ ¡Compra finalizada con éxito! Gracias por confiar en Esencia Cafetera. 🌱☕</p>';
       return false;
     }
- 
+ <script>
+  function mostrar(id) {
+    const elemento = document.getElementById(id);
+    if (elemento.classList.contains("visible")) {
+      elemento.classList.remove("visible");
+    } else {
+      elemento.classList.add("visible");
+    }
+  }
+</script>
+
